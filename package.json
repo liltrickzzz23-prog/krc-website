@@ -1,0 +1,12 @@
+{
+  "name": "krc-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Knowledge Reach Connections marketing website (static)",
+  "scripts": {
+    "start": "serve -l $PORT"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
