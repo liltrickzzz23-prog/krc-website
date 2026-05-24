@@ -143,3 +143,25 @@ Same for `assets/favicon.svg` if they have a favicon they prefer.
 ---
 
 Built with care. Questions on anything above — happy to walk through it.
+
+---
+
+## 9. SEO & social share (added)
+
+The site now includes:
+- `assets/og-image.png` — branded preview card shown when the link is shared (texts, email, LinkedIn, Slack).
+- `sitemap.xml` and `robots.txt` — help Google find and index the site.
+- `404.html` — a branded "page not found" page.
+- Social/SEO meta tags in every page `<head>`.
+
+**Important when you connect the real domain (krcglobal.org):** a few files
+hard-code the temporary Railway URL and must be updated to the new domain.
+From the project folder, run this find-and-replace (swap in the real domain):
+
+```bash
+grep -rl "krc-website-production.up.railway.app" . | xargs sed -i '' \
+  's|krc-website-production.up.railway.app|krcglobal.org|g'
+```
+
+Then commit and push. This updates the social-share URLs, canonical tags,
+sitemap, and robots file all at once.
